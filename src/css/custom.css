@@ -4,27 +4,112 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+/* Clean, modern, dark aesthetic with subtle green accents */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #26a69a;
+  --ifm-color-primary-dark: #1f8e83;
+  --ifm-color-primary-darker: #1d867b;
+  --ifm-color-primary-darkest: #186e66;
+  --ifm-color-primary-light: #4db6ac;
+  --ifm-color-primary-lighter: #80cbc4;
+  --ifm-color-primary-lightest: #b2dfdb;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Dark mode override - this is the default mode now */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  /* Retro Teal/Cyan Scheme (Matching the "PySilon NEXT" text) */
+  --ifm-color-primary: #26a69a; 
+  --ifm-color-primary-dark: #1f8e83;
+  --ifm-color-primary-darker: #1d867b;
+  --ifm-color-primary-darkest: #186e66;
+  --ifm-color-primary-light: #4db6ac;
+  --ifm-color-primary-lighter: #80cbc4;
+  --ifm-color-primary-lightest: #b2dfdb;
+  
+  /* Floppy Disk Matte Black Background */
+  --ifm-background-color: #121212; 
+  --ifm-background-surface-color: #1e1e1e;
+  --ifm-navbar-background-color: #0a0a0a;
+  --ifm-footer-background-color: #0a0a0a;
+  
+  --ifm-font-family-base: 'Courier New', 'Courier', 'Lucida Sans Typewriter', 'Lucida Console', monospace; /* Typewriter/Retro style */
+}
+
+/* Force dark mode styles */
+html {
+  background-color: #121212;
+  color: #e0e0e0; /* Slightly off-white text like the paper label */
+  font-family: 'Courier New', 'Courier', 'Lucida Sans Typewriter', 'Lucida Console', monospace;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(38, 166, 154, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+/* Navbar adjustments */
+.navbar {
+  border-bottom: 1px solid #333;
+}
+
+.navbar__title {
+  font-weight: bold;
+  color: var(--ifm-color-primary);
+  font-family: 'Courier New', monospace;
+  letter-spacing: -1px;
+}
+
+/* Sidebar adjustments */
+.menu__link--active {
+  background-color: rgba(38, 166, 154, 0.15);
+  color: var(--ifm-color-primary);
+  border-left: 4px solid var(--ifm-color-primary);
+}
+
+/* Footer adjustments */
+.footer {
+  border-top: 1px solid #333;
+}
+
+/* Markdown content */
+h1, h2, h3, h4, h5, h6 {
+  color: #f5f5f5; /* Paper White */
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase; /* Matches the "NEXT" styling */
+  letter-spacing: -0.5px;
+}
+
+a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--ifm-color-primary-lighter);
+  text-decoration: underline;
+}
+
+code {
+  border: 1px solid #333;
+  background-color: #1a1a1a;
+  color: #80cbc4; /* Light Teal for code */
+}
+
+/* Terminal-like code blocks */
+.prism-code {
+  background-color: #050505 !important;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+/* Buttons (matching the shutter silver/grey or teal) */
+.button--primary {
+  --ifm-button-background-color: var(--ifm-color-primary);
+  --ifm-button-border-color: var(--ifm-color-primary);
+  color: #000; /* Black text on teal button for contrast */
+  font-weight: bold;
 }
